@@ -27,6 +27,6 @@ jobs:
     - name: "Build Successfull"
       run: echo "Image created Successful"
     - name: "Login with docket cred"
-      run: echo "dckr_pat_8_xaVuLv0VTNzGcNdS6X4hr-vRw" | docker login -u sushantjhingran --password-stdin
+      run: echo "${{secrets.pwd}}" | docker login -u sushantjhingran --password-stdin
     - name: "Push Docker Image"
       run: docker push sushantjhingran/my-node-app:latest
