@@ -33,4 +33,4 @@ jobs:
     - name: "run build"
       run: echo "npm run build -> building App"
     - name: "Build Successfull"
-      run: ischo "Build Successful"
+      run: echo "Build Successful"
