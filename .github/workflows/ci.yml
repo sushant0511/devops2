@@ -34,3 +34,26 @@ jobs:
       run: echo "npm run build -> building App"
     - name: "Build Successfull"
       run: echo "Build Successful"
+  # job2
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: "install dependencies"
+      run: npm install
+    - name: "Testing COmmand"
+      run: echo "npm test -> ruunig test"
+    - name: "Successfully test"
+      run: echo "Tested Successfully"
